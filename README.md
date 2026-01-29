@@ -57,7 +57,7 @@ npm run dev
 
 The frontend will run on http://localhost:5173
 
-📂 Project Structure
+### 4. 📂 Project Structure
 
 flipr-placement-assignment/
 ├── backend/
@@ -77,7 +77,7 @@ flipr-placement-assignment/
 └── README.md               # Project Documentation
 
 
-📬 API Endpoints
+### 5. 📬 API Endpoints
 POST /api/submit
 
 Handles the form submission from the landing page.
@@ -98,3 +98,8 @@ Response:
       "phone": "1234567890"
   }
 }
+
+### 6. Deployment Architecture (Vercel & Render):
+The application utilizes a modern cloud-native deployment strategy:
+•	Frontend on Vercel: The React.js frontend is deployed on Vercel to utilize its global Edge Network. This ensures the landing page loads instantly for users worldwide. It is configured to automatically rebuild and deploy whenever changes are pushed to the GitHub repository.
+•	Backend on Render: The Python Flask API is hosted on Render as a Web Service. Render manages the Gunicorn application server and provides automatic SSL (HTTPS) to ensure that all customer data submitted through the form is encrypted and secure.
