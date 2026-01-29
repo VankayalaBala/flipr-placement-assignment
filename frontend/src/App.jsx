@@ -17,12 +17,13 @@ function App() {
     setFormData({...formData, [e.target.name]: e.target.value});
   };
 
-  // 2. This sends the data to your Python backend
+  // 2. This sends the data to your LIVE Python backend
   const handleSubmit = async (e) => {
     e.preventDefault();
     
     try {
-      const response = await fetch('http://127.0.0.1:5000/api/submit', {
+      // UPDATED LINE: Now pointing to your Render Backend
+      const response = await fetch('https://flipr-backend-j8qz.onrender.com/api/submit', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -41,7 +42,7 @@ function App() {
       }
     } catch (error) {
       console.error("Error:", error);
-      alert("❌ Failed to connect to server. Is Python running?");
+      alert("❌ Failed to connect to server. Is the backend deployed?");
     }
   };
 
